@@ -14,7 +14,7 @@ int* productExceptSelf(int* nums, int numsSize, int* returnSize) {
     for (int i = 1; i < numsSize; i++) {
         answer[i] = answer[i - 1] * nums[i - 1];
     }
-
+    
     // Pass 2: multiply suffix products
     int suffix = 1;
     for (int i = numsSize - 1; i >= 0; i--) {
