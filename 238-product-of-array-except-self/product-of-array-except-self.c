@@ -12,7 +12,7 @@ int* productExceptSelf(int* nums, int numsSize, int* returnSize) {
     // Pass 1: prefix products
     answer[0] = 1;
     for (int i = 1; i < numsSize; i++) {
-        answer[i] = answer[i-1] * nums[i-1];
+        answer[i] = answer[i - 1] * nums[i - 1];
     }
 
     // Pass 2: multiply suffix products
