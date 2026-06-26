@@ -3,10 +3,13 @@ char* mergeAlternately(char* word1, char* word2) {
     // malloced 256 bytes as an apt number near constraints
     char* result = (char*)malloc(256 * sizeof(char));
     
-    while (word1[i] != '\0' || word2[j] != '\0') {
-        if (word1[i] != '\0') result[idx++] = word1[i++];
-        if (word2[j] != '\0') result[idx++] = word2[j++];
+    while (word1[i] != '\0' && word2[j] != '\0') {
+        result[idx++] = word1[i++];
+        result[idx++] = word2[j++];
     }
+
+    while (word1[i] != '\0') result[idx++] = word1[i++];
+    while (word2[j] != '\0') result[idx++] = word2[j++];
     result[idx] = '\0';
     return result;
 }
