@@ -1,5 +1,3 @@
-#include <stdbool.h>
-
 char* mergeAlternately(char* word1, char* word2) {
     int idx = 0, i = 0, j = 0;
     // malloced 256 bytes as an apt number near constraints
