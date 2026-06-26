@@ -1,3 +1,4 @@
+#include <string.h>
 char* mergeAlternately(char* word1, char* word2) {
     int idx = 0, i = 0, j = 0;
     
