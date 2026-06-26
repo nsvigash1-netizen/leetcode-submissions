@@ -12,15 +12,24 @@ int compress(char* chars, int charsSize) {
             c++;
         }
 
-        // write charactr 
+        // write character 
         chars[idx++] = curChar;
 
         // write count only if > 1
         if (c > 1) {
-            char str[12];
-            snprintf(str, sizeof(str), "%d", c);
-            int strIdx = 0;
-            while (str[strIdx] != '\0') chars[idx++] = str[strIdx++]; 
+            // manual int to chars (not using snprintf)
+            int start = idx;
+            while (c > 0) {
+                chars[idx++] = '0' + (c % 10);
+                c/=10;
+            }
+            // flipping the digits (written in reverse)
+            int end = idx - 1;
+            while (start < end) {
+                char tmp = chars[start];
+                chars[start++] = chars[end];
+                chars[end--] = tmp;
+            }
         }
     }
     return idx;
