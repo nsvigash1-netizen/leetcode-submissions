@@ -17,5 +17,7 @@ double findMaxAverage(int* nums, int numsSize, int k) {
                 result = sum;
         }
     }
-    return result / k;
+    result /= k;
+
+    return result;
 }
