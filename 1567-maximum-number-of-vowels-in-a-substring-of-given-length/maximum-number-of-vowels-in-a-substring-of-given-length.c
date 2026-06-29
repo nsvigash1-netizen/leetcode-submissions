@@ -1,7 +1,7 @@
 int maxVowels(char* s, int k) {
     int c = 0;
     int maxVowel = 0;
-    for (int i = 0, end = strlen(s) - k + 1; i < end; i++) {
+    for (int i = 0, end = (int)strlen(s) - k + 1; i < end; i++) {
         if (i == 0) {
             for (int j = 0; j < k; j++) {
                 // bitmasking to check vowels
