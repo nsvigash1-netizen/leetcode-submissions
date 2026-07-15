@@ -20,7 +20,5 @@ struct ListNode* reverseList(struct ListNode* head) {
         old = old->next;
     }
     temp->next = new;
-    new = temp;
-    //old->next = temp;
-    return new;
+    return temp;
 }
