@@ -12,9 +12,9 @@ int romanToInt(char* s) {
     int result = 0;
     
     while (s[i]) {
-        int diff = romanArr[(unsigned char)s[i + 1]] - romanArr[(unsigned char)s[i]];
-        if (diff > 0) {
-            result += diff;
+        if (romanArr[(unsigned char)s[i + 1]] > romanArr[(unsigned char)s[i]]) {
+            result += romanArr[(unsigned char)s[i + 1]];
+            result -= romanArr[(unsigned char)s[i]];
             i++;
         } else {
             result += romanArr[(unsigned char)s[i]];
