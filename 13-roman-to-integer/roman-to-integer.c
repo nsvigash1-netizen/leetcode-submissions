@@ -1,5 +1,5 @@
 int romanToInt(char* s) {
-    int romanArr[256];
+    int romanArr[128];
     romanArr['I'] = 1;
     romanArr['V'] = 5;
     romanArr['X'] = 10;
