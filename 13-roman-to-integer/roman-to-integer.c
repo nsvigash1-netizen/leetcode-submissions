@@ -13,13 +13,10 @@ int romanToInt(char* s) {
     
     while (s[i]) {
         if (romanArr[(unsigned char)s[i + 1]] > romanArr[(unsigned char)s[i]]) {
-            result += romanArr[(unsigned char)s[i + 1]];
-            result -= romanArr[(unsigned char)s[i]];
-            i++;
+            result -= romanArr[(unsigned char)s[i++]];
         } else {
-            result += romanArr[(unsigned char)s[i]];
+            result += romanArr[(unsigned char)s[i++]];
         }
-        i++;
     }
     return result;
 }
