@@ -9,8 +9,8 @@
 
 int maxLevelSum(struct TreeNode* root) {
     if (!root) return 0;
-    struct TreeNode** queue = malloc(10000 * sizeof(struct TreeNode*));
-
+    // struct TreeNode** queue = malloc(10000 * sizeof(struct TreeNode*));
+    struct TreeNode* queue[10000];
     int head = 0, tail = 0;
     int maxSum = INT_MIN, maxLevel = 0, curLevel = 0;
 
@@ -32,7 +32,7 @@ int maxLevelSum(struct TreeNode* root) {
             if (node->right) queue[tail++] = node->right;
         }
     }
-    free(queue);
+    // free(queue);
     return maxLevel;
 
 }
