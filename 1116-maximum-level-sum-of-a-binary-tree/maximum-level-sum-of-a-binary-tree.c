@@ -12,9 +12,9 @@ int maxLevelSum(struct TreeNode* root) {
     struct TreeNode** queue = malloc(10000 * sizeof(struct TreeNode*));
 
     int head = 0, tail = 0;
-    queue[tail++] = root;
     int maxSum = INT_MIN, maxLevel = 0, curLevel = 0;
 
+    queue[tail++] = root;
     while(head < tail) {
         int levelSize = tail - head;
         int curSum = 0;
