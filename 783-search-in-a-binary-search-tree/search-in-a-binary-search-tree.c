@@ -10,8 +10,6 @@
 //     if (!node) return NULL;
 //     if (node->val == val) return node;
 // }
-
-struct TreeNode* answer = NULL;
 struct TreeNode* searchBST(struct TreeNode* root, int val) {
     if (!root) return NULL;
     if (root->val == val) {
