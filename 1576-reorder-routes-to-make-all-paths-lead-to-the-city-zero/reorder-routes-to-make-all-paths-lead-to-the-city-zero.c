@@ -15,7 +15,6 @@ int dfs(node** adj, int adjIdx, bool* visited) {
     return count;
 }
 int minReorder(int n, int** connections, int connectionsSize, int* connectionsColSize) {
-    int count;
     // adjacency list
     node* adj[n];
     for (int i = 0; i < n; i++)
@@ -39,5 +38,16 @@ int minReorder(int n, int** connections, int connectionsSize, int* connectionsCo
     }
     bool visited[50000] = {0};
     visited[0] = 1;
-    return dfs(adj, 0, visited);
+    int result = dfs(adj, 0, visited);
+
+    for (int i = 0; i < n; i++) {
+        node* p = adj[i];
+        while (p != NULL) {
+            node* nextNode = p->next;
+            free(p);
+            p = nextNode;
+        }
+    }
+
+    return result;
 }
